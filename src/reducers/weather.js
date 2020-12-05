@@ -25,6 +25,9 @@ export default (state = INITIAL_STATE, action) => {
                 ...{
                     weather: {
                         isFetching: true
+                    },
+                    forecast: {
+                        isFetching: true
                     }
                 }
             }
@@ -45,6 +48,9 @@ export default (state = INITIAL_STATE, action) => {
                     weather: {
                         isFetching: false,
                         ...action.payload
+                    },
+                    forecast: {
+                        isFetching: false
                     }
                 }
             }

@@ -5,6 +5,7 @@ import TypeSearch from '../../components/TypeSearch';
 import WeatherBoard from '../../components/WeatherBoard';
 
 import { fetchWeather } from '../../actions/weatherActions';
+import AppTitle from '../../components/AppTitle';
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -14,13 +15,16 @@ class HomePage extends Component {
     }
      
     render() { 
+        const { weather } = this.props
         return (
             <React.Fragment>
+                <AppTitle>Open Weather</AppTitle>
                 <TypeSearch 
+                    weather={ weather }
                     onChange={(value)=> this.setState({ city: value})}
                     onSearch={()=> this.props.fetchWeather(this.state.city)}
                 />                
-                <WeatherBoard />
+                <WeatherBoard weather={ weather }/>
             </React.Fragment>
         );
     }
