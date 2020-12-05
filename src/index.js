@@ -4,7 +4,7 @@ import App from './containers/App';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store';
-
+require('moment-timezone');
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
