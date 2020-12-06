@@ -32,8 +32,8 @@ const getWeatherApiErr = (data)=> ({
     payload: data.response.data
 })
 // fetch weater forecast
-const featherWeaterForecast = (params) => async dispatch => {
-    dispatch(fetchingForecast())
+export const featherWeaterForecast = (params) => async dispatch => {
+    dispatch(fetchingForecast())    
     try{
         const res = await Api.fetchWeatherForecast(params.coord.lat, params.coord.lon);        
         dispatch(getForecastSuccess(res.data))        
